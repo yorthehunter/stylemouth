@@ -21,7 +21,11 @@ group :assets do
   gem 'uglifier'
 end
 
-
+group :development do
+  gem 'style-guide'
+  gem "rack-livereload"
+  gem "guard-livereload"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

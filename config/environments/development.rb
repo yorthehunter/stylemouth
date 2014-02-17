@@ -1,4 +1,5 @@
 Litemouth::Application.configure do
+  config.middleware.insert_before(::Rack::Lock, ::Rack::LiveReload, :min_delay => 500) if defined?(Rack::LiveReload)
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
