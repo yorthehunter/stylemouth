@@ -1,0 +1,431 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+/**
+* Example:
+* <div class="grid m-20">
+*   <div class="g-i g-1-2">
+*     Content
+*   </div>
+*   <div class="g-i g-1-2">
+*     Content
+*   </div>
+* </div>
+*/
+
+/* Custom breakpoints
+   ========================================================================== */
+
+$small-media-width: 480px;
+$medium-media-width: 768px;
+$tablet-media-width: 1024px;
+
+
+/* Media breakpoint, super-simple version
+   ========================================================================== */
+
+@mixin media($media) {
+  @if $media == small-media {
+    @media screen and (max-width: $small-media-width) {
+      @content;
+    }
+  } @else if $media == medium-media {
+    @media screen and (max-width: $medium-media-width) and (min-width: $small-media-width) {
+      @content;
+    }
+  } @else if $media == less-than-medium-media {
+    @media screen and (max-width: $medium-media-width) {
+      @content;
+    }
+  } @else if $media == large-media {
+    @media screen and (min-width: $medium-media-width) {
+      @content;
+    }
+  }
+}
+
+
+$grid-gutter: 20px;
+
+/**
+* 1. Fix for lists.
+* 2. Negative margin to offset grid parent
+*/
+
+.grid {
+  list-style: n_1; /* 1 */
+  margin-left: -$grid-gutter; /* 2 */
+  padding: 0;
+  letter-spacing: -0.31em;
+}
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+
+.g {
+  display:            inline-block; /* 1 */
+  padding-left: $grid-gutter;       /* 2 */
+  vertical-align:     top;          /* 3 */
+  width:              100%;         /* 4 */
+  -webkit-box-sizing: border-box;   /* 5 */
+  -moz-box-sizing:    border-box;   /* 5 */
+  box-sizing:         border-box;   /* 5 */
+  letter-spacing:     normal;       /* 6 */
+  word-spacing:       normal;       /* 6 */
+}
+
+
+
+/* Widths */
+
+._1-1, ._1-1-xs, ._1-1-sm, ._1-1-md, ._1-1-lg, ._1-1-xl,  {
+  width: 100%;
+}
+
+._1-2, ._1-2-xs, ._1-2-sm, ._1-2-md, ._1-2-lg, ._1-2-xl,
+._2-4, ._2-4-xs, ._2-4-sm, ._2-4-md, ._2-4-lg, ._2-4-xl,
+._3-6, ._3-6-xs, ._3-6-sm, ._3-6-md, ._3-6-lg, ._3-6-xl,
+._4-8, ._4-8-xs, ._4-8-sm, ._4-8-md, ._4-8-lg, ._4-8-xl,
+._5-10, ._1-2-xs, ._1-2-sm, ._1-2-md, ._5-10-lg, ._5-10-xl,
+._6-12  ._5-10-xs, ._1-2-sm, ._5-10-md, ._5-10-lg, ._5-10-xl {
+  width: 50%;
+  &.u-center { margin-left: -25%; }
+}
+
+._1-3, ._1-3-xs, ._1-3-sm, ._1-3-md, ._1-3-lg, ._1-3-xl,
+._2-6, ._2-6-xs, ._2-6-sm, ._2-6-md, ._2-6-lg, ._2-6-xl,
+._3-9, ._3-9-xs, ._3-9-sm, ._3-9-md, ._3-9-lg, ._3-9-xl,
+._4-12, ._4-12-xs ._4-12-sm ._4-12-md ._4-12-lg ._4-12-xl {
+  width: 33.333%;
+  &.u-center { margin-left: -16.666%; }
+}
+
+._2-3,
+._4-6,
+._6-9,
+._8-12 {
+  width: 66.666%;
+  &.u-center { margin-left: -33.333%; }
+}
+
+._1-4,
+._2-8,
+._3-12 {
+  width: 25%;
+  &.u-center { margin-left: -12.5%; }
+}
+
+._3-4,
+._6-8,
+._8-12 {
+  width: 75%;
+  &.u-center { margin-left: -37.5%; }
+}
+
+._1-5,
+._2-10 {
+  width: 20%;
+  &.u-center { margin-left: -10%; }
+}
+
+._2-5,
+._4-10 {
+  width: 40%;
+  &.u-center { margin-left: -20%; }
+}
+
+._3-5,
+._6-10 {
+  width: 60%;
+  &.u-center { margin-left: -30%; }
+}
+
+._4-5,
+._8-10 {
+  width: 80%;
+  &.u-center { margin-left: -40%; }
+}
+
+._1-6,
+._2-12 {
+  width: 16.666%;
+  &.u-center { margin-left: -8.333%; }
+}
+
+._5-6,
+._10-12 {
+  width: 83.333%;
+  &.u-center { margin-left: -41.666%; }
+}
+
+._1-7 {
+  width: 14.286%;
+  &.u-center { margin-left: -7.143%; }
+}
+
+._2-7 {
+  width: 28.571%;
+  &.u-center { margin-left: -14.285%; }
+}
+
+._3-7 {
+  width: 42.857%;
+  &.u-center { margin-left: -21.428%; }
+}
+
+._4-7 {
+  width: 57.143%;
+  &.u-center { margin-left: -28.571%; }
+}
+
+._5-7 {
+  width: 71.429%;
+  &.u-center { margin-left: -35.714%; }
+}
+
+._6-7 {
+  width: 85.714%;
+  &.u-center { margin-left: -42.857%; }
+
+}
+
+._1-8 {
+  width: 12.5%;
+  &.u-center { margin-left: -6.25%; }
+
+}
+
+._3-8 {
+  width: 37.5%;
+  &.u-center { margin-left: -18.75%; }
+
+}
+
+._5-8 {
+  width: 62.5%;
+  &.u-center { margin-left: -31.25%; }
+
+}
+
+._7-8 {
+  width: 87.5%;
+  &.u-center { margin-left: -43.75%; }
+
+}
+
+/**
+ * Small media widths
+ * Additional classes that only take effect in small media
+ */
+
+@media screen and (max-width: $small-media-width) {
+  .g-small-1-1 {
+    width: 100%;
+  }
+  .g-small-1-2 {
+    width: 50%;
+  }
+  .g-small-1-3 {
+    width: 33.333%;
+  }
+  .g-small-2-3 {
+    width: 66.666%;
+  }
+  .g-small-1-4 {
+    width: 25%;
+  }
+  .g-small-2-4 {
+    width: 50%;
+  }
+  .g-small-3-4 {
+    width: 75%;
+  }
+  /**
+   * Uncomment to debug current breakpoint
+   */
+  //body:before{
+  //  con_10t: 'small';
+  //}
+}
+
+/**
+ * Medium media widths
+ * Additional classes that only take effect in medium media
+ */
+
+@media screen and (min-width: ($small-media-width)) and (max-width: $medium-media-width) {
+  .g-medium-1-1 {
+    width: 100%;
+  }
+  .g-medium-1-2 {
+    width: 50%;
+  }
+  .g-medium-1-3 {
+    width: 33.333%;
+  }
+  .g-medium-2-3 {
+    width: 66.666%;
+  }
+  .g-medium-1-4 {
+    width: 25%;
+  }
+  .g-medium-2-4 {
+    width: 50%;
+  }
+  .g-medium-3-4 {
+    width: 75%;
+  }
+  .g-medium-1-5 {
+    width: 20%;
+  }
+  .g-medium-2-5 {
+    width: 40%;
+  }
+  .g-medium-3-5 {
+    width: 60%;
+  }
+  .g-medium-4-5 {
+    width: 80%;
+  }
+  .g-medium-1-6 {
+    width: 16.666%;
+  }
+  .g-medium-2-6 {
+    width: 33.333%;
+  }
+  .g-medium-3-6 {
+    width: 50%;
+  }
+  .g-medium-4-6 {
+    width: 66.666%;
+  }
+  .g-medium-5-6 {
+    width: 83.333%;
+  }
+  /**
+   * Uncomment to debug current breakpoint
+   */
+  //body:before{
+  //  content: 'medium';
+  //}
+}
+
+/**
+ * Tablet (landscape) media widths
+ * TODO needs name more consistent with others
+ * Additional classes that only take effect in landscape tablet media
+ */
+
+@media screen and (min-width: ($medium-media-width)) and (max-width: $tablet-media-width) {
+  .g-tablet-1-1 {
+    width: 100%;
+  }
+  .g-tablet-1-2 {
+    width: 50%;
+  }
+  .g-tablet-1-3 {
+    width: 33.333%;
+  }
+  .g-tablet-2-3 {
+    width: 66.666%;
+  }
+  .g-tablet-1-4 {
+    width: 25%;
+  }
+  .g-tablet-2-4 {
+    width: 50%;
+  }
+  .g-tablet-3-4 {
+    width: 75%;
+  }
+  .g-tablet-1-5 {
+    width: 20%;
+  }
+  .g-tablet-2-5 {
+    width: 40%;
+  }
+  .g-tablet-3-5 {
+    width: 60%;
+  }
+  .g-tablet-4-5 {
+    width: 80%;
+  }
+  .g-tablet-1-6 {
+    width: 16.666%;
+  }
+  .g-tablet-2-6 {
+    width: 33.333%;
+  }
+  .g-tablet-3-6 {
+    width: 50%;
+  }
+  .g-tablet-4-6 {
+    width: 66.666%;
+  }
+  .g-tablet-5-6 {
+    width: 83.333%;
+  }
+  /**
+   * Uncomment to debug current breakpoint
+   */
+  //body:before{
+  //  content: 'tablet';
+  //}
+}
+
+/* Utility classes
+   ========================================================================== */
+
+/**
+ * Reverse grid
+ * Presents columns in reverse order of the markup. Extends ".grid".
+ */
+
+.g-u-rev {
+  direction: rtl;
+  text-align: left;
+
+  > .g-i {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+/* Center align grid. Extends ".grid". */
+.g-u-c {
+  text-align: center;
+
+  > .g-i {
+    text-align: left;
+  }
+
+}
+
+/* Right align grid. Extends ".grid". */
+.g-u-r {
+  text-align: right;
+
+  > .g-i {
+    text-align: left;
+  }
+}
+
+/* Fixed column. Extends ".g-i". */
+.g-fixed {
+  position: fixed;
+  left: 0;
+  padding-top: 20px;
+
+  @include media(small-media) {
+    position: relative;
+  }
+
+  @include media(medium-media) {
+    position: relative;
+  }
+}
