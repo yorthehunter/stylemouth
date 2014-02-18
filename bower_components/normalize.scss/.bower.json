@@ -7,7 +7,7 @@
     "John Albin Wilkins"
   ],
   "description": "A Sass/Compass version of Normalize.css.",
-  "main": "_normalize.scss",
+  "main": "_normalize.css.scss",
   "keywords": [
     "normalize.css"
   ],
