@@ -34,4 +34,7 @@ Litemouth::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Rails 4 warning in terminal
+  config.eager_load = false
 end
