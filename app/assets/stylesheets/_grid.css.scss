@@ -67,7 +67,7 @@ $container-lg:  ($media-width-md - ($container-pad*2));
 $container-xl:  ($media-width-lg - ($container-pad*2));
 
 .container {
-  padding: $container-pad;
+  padding: 0 $container-pad;
   margin: auto;
 
   @include media(sm) {
@@ -118,8 +118,8 @@ $grid-gutter: 20px;
   box-sizing:         border-box;   /* 5 */
   margin-right:      -4px;          /* 6 */
 
+  /* For debugging */
   p {
-    /* For debugging */
     background-color: lightyellow;
     outline: 1px dotted rgba(0,0,0,0.15);
   }
