@@ -23,31 +23,6 @@ $media-width-md: 992px;
 $media-width-lg: 1200px;
 $media-width-xl: 1400px;
 
-$small-media-width: 480px;
-$medium-media-width: 768px;
-$tablet-media-width: 1024px;
-
-
-/* Container
-   ========================================================================== */
-/**
-*  The container class, when included in the markup, will constrain the width
-*  of the content area, based on defined media breakpoints.
-*/
-
-//.container {
-//
-//  @media (min-width: @screen-sm-min) {
-//    width: @container-sm;
-//  }
-//  @media (min-width: @screen-md-min) {
-//    width: @container-md;
-//  }
-//  @media (min-width: @screen-lg-min) {
-//    width: @container-lg;
-//  }
-//}
-
 
 /* Media breakpoint, super-simple version
    ========================================================================== */
@@ -73,6 +48,39 @@ $tablet-media-width: 1024px;
     @media screen and (min-width: ($media-width-lg + 1)) {
       @content;
     }
+  }
+}
+
+
+
+/* Container
+   ========================================================================== */
+/**
+*  The container class, when included, will constrain the width of its
+*  children, based on defined media breakpoints.
+*/
+
+$container-sm:  $media-width-xs;
+$container-md:  $media-width-sm;
+$container-lg:  $media-width-md;
+$container-xl:  $media-width-lg;
+$container-pad: 10px;
+
+.container {
+  padding: $container-pad;
+  margin: auto;
+
+  @include media(sm) {
+    width: $container-sm;
+  }
+  @include media(md) {
+    width: $container-md;
+  }
+  @include media(lg) {
+    width: $container-lg;
+  }
+  @include media(xl) {
+    width: $container-xl;
   }
 }
 
@@ -110,12 +118,16 @@ $grid-gutter: 20px;
   box-sizing:         border-box;   /* 5 */
   margin-right:      -4px;          /* 6 */
 
-  /* For debugging */
-  background-color: lightyellow;
-  outline: 1px dotted rgba(0,0,0,0.15);
- &:nth-child(odd) {
-   background-color: lightpink;
- }
+  p {
+    /* For debugging */
+    background-color: lightyellow;
+    outline: 1px dotted rgba(0,0,0,0.15);
+  }
+  &:nth-child(odd) {
+    p {
+      background-color: lightpink;
+    }
+  }
 }
 
 
@@ -181,9 +193,9 @@ $grid-gutter: 20px;
 
 
 @include media(xs) {
-  body:before{
-    content: 'xs';
-  }
+//  body:before{
+//    content: 'xs';
+//  }
 
   ._1-1-xs,
   ._2_2-xs,
@@ -233,9 +245,9 @@ $grid-gutter: 20px;
 }
 
 @include media(sm) {
-  body:before{
-    content: 'sm';
-  }
+//  body:before{
+//    content: 'sm';
+//  }
 
   ._1-1-sm,
   ._2_2-sm,
@@ -285,9 +297,9 @@ $grid-gutter: 20px;
 }
 
 @include media(md) {
-  body:before{
-    content: 'md';
-  }
+//  body:before{
+//    content: 'md';
+//  }
 
   ._1-1-md,
   ._2_2-md,
@@ -337,9 +349,9 @@ $grid-gutter: 20px;
 }
 
 @include media(lg) {
-  body:before{
-    content: 'lg';
-  }
+//  body:before{
+//    content: 'lg';
+//  }
 
   ._1-1-lg,
   ._2_2-lg,
@@ -389,9 +401,9 @@ $grid-gutter: 20px;
 }
 
 @include media(xl) {
-  body:before{
-    content: 'xl';
-  }
+//  body:before{
+//    content: 'xl';
+//  }
 
   ._1-1-xl,
   ._2_2-xl,
@@ -442,170 +454,6 @@ $grid-gutter: 20px;
 
 
 
-
-
-
-
-/**
- * Small media widths
- * Additional classes that only take effect in small media
- */
-
-@media screen and (max-width: $small-media-width) {
-  .g-small-1-1 {
-    width: 100%;
-  }
-  .g-small-1-2 {
-    width: 50%;
-  }
-  .g-small-1-3 {
-    width: 33.333%;
-  }
-  .g-small-2-3 {
-    width: 66.666%;
-  }
-  .g-small-1-4 {
-    width: 25%;
-  }
-  .g-small-2-4 {
-    width: 50%;
-  }
-  .g-small-3-4 {
-    width: 75%;
-  }
-  /**
-   * Uncomment to debug current breakpoint
-   */
-//  body:before{
-//    content: 'small';
-//  }
-}
-
-/**
- * Medium media widths
- * Additional classes that only take effect in medium media
- */
-
-@media screen and (min-width: ($small-media-width)) and (max-width: $medium-media-width) {
-  .g-medium-1-1 {
-    width: 100%;
-  }
-  .g-medium-1-2 {
-    width: 50%;
-  }
-  .g-medium-1-3 {
-    width: 33.333%;
-  }
-  .g-medium-2-3 {
-    width: 66.666%;
-  }
-  .g-medium-1-4 {
-    width: 25%;
-  }
-  .g-medium-2-4 {
-    width: 50%;
-  }
-  .g-medium-3-4 {
-    width: 75%;
-  }
-  .g-medium-1-5 {
-    width: 20%;
-  }
-  .g-medium-2-5 {
-    width: 40%;
-  }
-  .g-medium-3-5 {
-    width: 60%;
-  }
-  .g-medium-4-5 {
-    width: 80%;
-  }
-  .g-medium-1-6 {
-    width: 16.666%;
-  }
-  .g-medium-2-6 {
-    width: 33.333%;
-  }
-  .g-medium-3-6 {
-    width: 50%;
-  }
-  .g-medium-4-6 {
-    width: 66.666%;
-  }
-  .g-medium-5-6 {
-    width: 83.333%;
-  }
-  /**
-   * Uncomment to debug current breakpoint
-   */
-//  body:before{
-//    content: 'medium';
-//  }
-}
-
-/**
- * Tablet (landscape) media widths
- * TODO needs name more consistent with others
- * Additional classes that only take effect in landscape tablet media
- */
-
-@media screen and (min-width: ($medium-media-width)) and (max-width: $tablet-media-width) {
-  .g-tablet-1-1 {
-    width: 100%;
-  }
-  .g-tablet-1-2 {
-    width: 50%;
-  }
-  .g-tablet-1-3 {
-    width: 33.333%;
-  }
-  .g-tablet-2-3 {
-    width: 66.666%;
-  }
-  .g-tablet-1-4 {
-    width: 25%;
-  }
-  .g-tablet-2-4 {
-    width: 50%;
-  }
-  .g-tablet-3-4 {
-    width: 75%;
-  }
-  .g-tablet-1-5 {
-    width: 20%;
-  }
-  .g-tablet-2-5 {
-    width: 40%;
-  }
-  .g-tablet-3-5 {
-    width: 60%;
-  }
-  .g-tablet-4-5 {
-    width: 80%;
-  }
-  .g-tablet-1-6 {
-    width: 16.666%;
-  }
-  .g-tablet-2-6 {
-    width: 33.333%;
-  }
-  .g-tablet-3-6 {
-    width: 50%;
-  }
-  .g-tablet-4-6 {
-    width: 66.666%;
-  }
-  .g-tablet-5-6 {
-    width: 83.333%;
-  }
-  /**
-   * Uncomment to debug current breakpoint
-   */
-//  body:before{
-//    content: 'tablet';
-//  }
-}
-
 /* Utility classes
    ========================================================================== */
 
@@ -614,36 +462,38 @@ $grid-gutter: 20px;
  * Presents columns in reverse order of the markup. Extends ".grid".
  */
 
-.g-u-rev {
+._u-reverse {
   direction: rtl;
   text-align: left;
 
-  > .g-i {
+  > .g {
     direction: ltr;
     text-align: left;
   }
 }
 
 /* Center align grid. Extends ".grid". */
-.g-u-c {
+._u-c {
   text-align: center;
 
-  > .g-i {
+  > .g {
     text-align: left;
   }
 
 }
 
 /* Right align grid. Extends ".grid". */
-.g-u-r {
+._u-r {
   text-align: right;
 
-  > .g-i {
+  > .g {
     text-align: left;
+    margin-right: 0;
+    margin-left: -4px;
   }
 }
 
-/* Fixed column. Extends ".g-i". */
+/* Fixed column. Extends ".g". */
 .g-fixed {
   position: fixed;
   left: 0;
