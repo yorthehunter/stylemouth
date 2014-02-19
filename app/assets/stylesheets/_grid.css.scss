@@ -60,11 +60,11 @@ $media-width-xl: 1400px;
 *  children, based on defined media breakpoints.
 */
 
-$container-sm:  $media-width-xs;
-$container-md:  $media-width-sm;
-$container-lg:  $media-width-md;
-$container-xl:  $media-width-lg;
 $container-pad: 10px;
+$container-sm:  ($media-width-xs - ($container-pad*2));
+$container-md:  ($media-width-sm - ($container-pad*2));
+$container-lg:  ($media-width-md - ($container-pad*2));
+$container-xl:  ($media-width-lg - ($container-pad*2));
 
 .container {
   padding: $container-pad;
