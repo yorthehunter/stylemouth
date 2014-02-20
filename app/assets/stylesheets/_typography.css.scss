@@ -11,9 +11,11 @@ $font-family-serif:       Georgia, Constantia, "Lucida Bright", Lucidabright, "L
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
 
+$font-weight:             400 !default;
+$font-weight-light:       100 !default;
+$font-weight-heavy:       700 !default;
 
-
-
+$font-color-base:         #444;
 
 $font-size-base:          18px;
 $font-size-ratio:         1.33;
@@ -35,10 +37,11 @@ $font-size-h6:            font-size(-1);
 $line-height-multiplier:  1.618;
 $line-height-base:        1.618;
 
-$headings-font-family:    $font-family-serif;
-$headings-font-weight:    400;
-$headings-line-height:    1.1;
-$headings-color:          inherit;
+$headings-font-family:    $font-family-serif !default;
+$headings-font-weight:    700 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+$headings-weight:         $font-weight-heavy !default;
 
 $pad-h-sm: font-size(-1);
 $pad-h-md: font-size(0);
@@ -50,11 +53,22 @@ $pad-v-lg: font-size(1)  / 2;
 $pad-h-base: $pad-h-md;
 $pad-v-base: $pad-v-md;
 
+$bg-color-base: #F8F8F8;
+
 body    {
   font-size:   $font-size-base;
   font-family: $font-family-base;
+  font-weight: $font-weight;
   line-height: $line-height-base;
+
+  color:            $font-color-base;
+  background-color: $bg-color-base;
 }
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  font-weight: $headings-weight;
+}
+
 
 h1,.h1,h2,.h2 {
   margin: $pad-h-lg 0 $pad-h-lg;

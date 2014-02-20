@@ -17,11 +17,11 @@
 /* Custom breakpoints
    ========================================================================== */
 
-$media-width-xs: 480px;
-$media-width-sm: 768px;
-$media-width-md: 992px;
-$media-width-lg: 1200px;
-$media-width-xl: 1400px;
+$media-width-xs: 480px !default;
+$media-width-sm: 768px !default;
+$media-width-md: 992px !default;
+$media-width-lg: 1200px !default;
+$media-width-xl: 1400px !default;
 
 
 /* Media breakpoint, super-simple version
@@ -56,8 +56,11 @@ $media-width-xl: 1400px;
 /* Container
    ========================================================================== */
 /**
-*  The container class, when included, will constrain the width of its
-*  children, based on defined media breakpoints.
+* The container class, when included, will constrain the width of its
+* children, based on defined media breakpoints.
+*
+* 1. Include a $container-max if you want to constrain the maximum allowable
+*    width for the container. i.e. for blog posts (null value doesn't compile)
 */
 
 $container-pad: 10px;
@@ -66,9 +69,12 @@ $container-md:  ($media-width-sm - ($container-pad*2));
 $container-lg:  ($media-width-md - ($container-pad*2));
 $container-xl:  ($media-width-lg - ($container-pad*2));
 
+$container-max: null !default; /* 1 */
+
 .container {
   padding: 0 $container-pad;
   margin: auto;
+  max-width: $container-max;
 
   @include media(sm) {
     width: $container-sm;
@@ -83,8 +89,6 @@ $container-xl:  ($media-width-lg - ($container-pad*2));
     width: $container-xl;
   }
 }
-
-
 
 $grid-gutter: 20px;
 

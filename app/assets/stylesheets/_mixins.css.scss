@@ -20,6 +20,13 @@
 }
 
 
+/* Font-size function (returns
+   ========================================================================== */
+/**
+* 1. Based on type-base and ratio.
+* 2. Small media shrinks font-size by 1 typographical step
+*/
+
 $font-size-base:          18px;
 $font-size-ratio:         1.33;
 
@@ -29,7 +36,7 @@ $font-size-ratio:         1.33;
 }
 
 
-/* Return font-size in px
+/* Font-size mixin
    ========================================================================== */
 /**
 * 1. Based on type-base and ratio.
