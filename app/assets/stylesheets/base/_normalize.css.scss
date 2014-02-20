@@ -25,8 +25,8 @@ $strict-normalize: true !default;
 $indent-amount: 40px !default;
 
 // After the default variables are set, import the required Compass partials.
-@import "compass/support";
-@import "compass/css3/box-sizing";
+@import "../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/support";
+@import "../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/css3/box-sizing";
 
 
 /* ==========================================================================

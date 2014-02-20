@@ -1,7 +1,9 @@
 /*
 */
 
-@import "normalize";
-@import "mixins";
-@import "grid";
-@import "typography";
+@import "base/variables";
+@import "base/normalize";
+@import "base/mixins";
+@import "structure/grid";
+@import "structure/layout";
+@import "base/typography";
