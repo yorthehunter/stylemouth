@@ -50,3 +50,31 @@ $font-size-ratio:         1.33;
     font-size:$font-size-base*exponent($font-size-ratio, $baseline - 1);
   }
 }
+
+
+/* Media breakpoint, super-simple version
+   ========================================================================== */
+
+@mixin media($media) {
+  @if $media == xs {
+    @media screen and (max-width: $media-width-xs) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
+      @content;
+    }
+  } @else if $media == md {
+    @media screen and (max-width: $media-width-md) and (min-width: ($media-width-sm + 1)) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media screen and (max-width: $media-width-lg) and (min-width: ($media-width-md + 1)) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media screen and (min-width: ($media-width-lg + 1)) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/* Neutrals and primaries
+   ========================================================================== */
+
+$gray1:    #002b36;
+$gray2:    #073642;
+$gray3:    #586e75;
+$gray4:    #657b83;
+$gray5:    #839496;
+$gray6:    #93a1a1;
+$gray7:    #eee8d5;
+$gray8:    #fdf6e3;
+
+$base03:   $gray1;
+$base02:   $gray2;
+$base01:   $gray3;
+$base00:   $gray4;
+$base0:    $gray5;
+$base1:    $gray6;
+$base2:    $gray7;
+$base3:    $gray8;
+
+$yellow:   #b58900;
+$orange:   #cb4b16;
+$red:      #dc322f;
+$magenta:  #d33682;
+$violet:   #6c71c4;
+$blue:     #268bd2;
+$cyan:     #2aa198;
+$green:    #859900;
+
+
+/* Brand and component colors
+   ========================================================================== */
+
+$brand-color-1:   $blue !default;
+$brand-color-2:   null !default;
+$brand-color-3:   null !default;
+$brand-primary:   $brand-color-1;
+$brand-secondary: null !default;
+$brand-tertiary:  null !default;;
+
+$neutral1: #faf9ee;
+$neutral2: $gray8;
+$neutral3: $gray7;
+$neutral4: $gray6;
+
+$bg-color-base:           $neutral1;
+$font-color-base:         #42423f;

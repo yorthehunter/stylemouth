@@ -14,45 +14,6 @@
 */
 
 
-/* Custom breakpoints
-   ========================================================================== */
-
-$media-width-xs: 480px !default;
-$media-width-sm: 768px !default;
-$media-width-md: 992px !default;
-$media-width-lg: 1200px !default;
-$media-width-xl: 1400px !default;
-
-
-/* Media breakpoint, super-simple version
-   ========================================================================== */
-
-@mixin media($media) {
-  @if $media == xs {
-    @media screen and (max-width: $media-width-xs) {
-      @content;
-    }
-  } @else if $media == sm {
-    @media screen and (max-width: $media-width-sm) and (min-width: ($media-width-xs + 1)) {
-      @content;
-    }
-  } @else if $media == md {
-    @media screen and (max-width: $media-width-md) and (min-width: ($media-width-sm + 1)) {
-      @content;
-    }
-  } @else if $media == lg {
-    @media screen and (max-width: $media-width-lg) and (min-width: ($media-width-md + 1)) {
-      @content;
-    }
-  } @else if $media == xl {
-    @media screen and (min-width: ($media-width-lg + 1)) {
-      @content;
-    }
-  }
-}
-
-
-
 /* Container
    ========================================================================== */
 /**
