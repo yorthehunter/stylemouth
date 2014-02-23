@@ -27,9 +27,6 @@
 * 2. Small media shrinks font-size by 1 typographical step
 */
 
-$font-size-base:          18px;
-$font-size-ratio:         1.33;
-
 @function font-size($baseline) {
   $value: $font-size-base*exponent($font-size-ratio, $baseline);
   @return $value;

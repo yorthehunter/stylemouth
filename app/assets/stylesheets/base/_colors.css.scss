@@ -29,12 +29,17 @@ $cyan:     #2aa198;
 $green:    #859900;
 
 
+/* Links
+   ========================================================================== */
+
+$link-color: $blue;
+
 /* Brand and component colors
    ========================================================================== */
 
 $brand-color-1:   $blue !default;
-$brand-color-2:   null !default;
-$brand-color-3:   null !default;
+$brand-color-2:   $orange !default;
+$brand-color-3:   $green !default;
 $brand-primary:   $brand-color-1;
 $brand-secondary: null !default;
 $brand-tertiary:  null !default;;
