@@ -1,0 +1,6 @@
+a {
+  @if $link-transition-option {
+    @include transition(color,$tran-speed);
+  }
+}
+

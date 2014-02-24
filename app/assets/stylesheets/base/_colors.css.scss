@@ -33,6 +33,13 @@ $green:    #859900;
    ========================================================================== */
 
 $link-color: $blue;
+$link-hover-color: ting($blue,10%);
+$link-active-color: $blue;
+$link-visited-color: $blue;
+
+$link-transition-option: true !default;
+
+
 
 /* Brand and component colors
    ========================================================================== */
@@ -49,5 +56,5 @@ $neutral2: $gray8;
 $neutral3: $gray7;
 $neutral4: $gray6;
 
-$bg-color-base:           $neutral1;
+$bg-color-base:           white;
 $font-color-base:         #42423f;

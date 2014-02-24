@@ -102,6 +102,10 @@ $btn-radius-option:  true !default;
 .btn-link {
   background-color: transparent;
   color: $link-color;
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 .btn-sm {

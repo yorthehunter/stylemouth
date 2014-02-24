@@ -10,11 +10,39 @@
 ._m-b-2 { margin-bottom: ($pad-v-base*2); }
 ._m-b-3 { margin-bottom: ($pad-v-base*3); }
 ._m-b-4 { margin-bottom: ($pad-v-base*4); }
-._m-r-1 { margin-right:  ($pad-v-base*1); }
-._m-r-2 { margin-right:  ($pad-v-base*2); }
-._m-l-1 { margin-left:   ($pad-v-base*1); }
-._m-l-2 { margin-left:   ($pad-v-base*2); }
+._m-r-1 { margin-right:  ($pad-h-base*1); }
+._m-r-2 { margin-right:  ($pad-h-base*2); }
+._m-l-1 { margin-left:   ($pad-h-base*1); }
+._m-l-2 { margin-left:   ($pad-h-base*2); }
 
 // Paddings
-._p-1 { padding: $pad-v-base $pad-h-base; }
-._p-2 { padding: ($pad-v-base*2) ($pad-h-base*2); }
+._p-1  { padding: $pad-v-base $pad-h-base; }
+._p-2  { padding: ($pad-v-base*2) ($pad-h-base*2); }
+._p-xs { padding: $pad-v-xs $pad-h-xs; }
+._p-sm { padding: $pad-v-sm $pad-h-sm; }
+._p-md { padding: $pad-v-md $pad-h-md; }
+._p-lg { padding: $pad-v-lg $pad-h-lg; }
+
+// display
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+._disp-0     { display: none; }
+._disp-block { display: block; }
+._disp-ib    { display: inline-block; }
+
+._pos-abs { position: absolute; }
+._pos-rel { position: relative; }
+._pos-fix { position: fixed; }
+._pos-a   { top: 0; bottom: 0; left: 0; right: 0; }
+._pos-l   { left: 0; }
+._pos-r   { right: 0; }
+._pos-t   { top: 0; }
+._pos-b   { bottom: 0; }
+
+.clearfix { @include clearfix(); }
+
+.fl-l { float: left; }
+.fl-r { float: right; }
