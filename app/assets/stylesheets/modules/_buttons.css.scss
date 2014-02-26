@@ -5,6 +5,7 @@ $btn-bg-default:     $gray4 !default;
 $btn-bg-primary:     $brand-color-1 !default;
 $btn-bg-secondary:   $brand-color-2 !default;
 $btn-bg-tertiary:    $brand-color-3 !default;
+$btn-bg-link:        rgba($blue-soft, 0.1) !default;
 $btn-font-default:   white !default;
 $btn-font-primary:   white !default;
 $btn-font-secondary: white !default;
@@ -114,7 +115,7 @@ $btn-radius-option:  true !default;
     color: $link-visited-color;
   }
   &:hover {
-    background-color: transparent;
+    background-color: $btn-bg-link;
     color: $link-hover-color;
   }
   &:active {
