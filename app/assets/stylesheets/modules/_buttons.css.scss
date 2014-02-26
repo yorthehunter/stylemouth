@@ -110,15 +110,15 @@ $btn-radius-option:  true !default;
   background-color: transparent;
   color: $link-color;
 
+  &:visited {
+    color: $link-visited-color;
+  }
   &:hover {
     background-color: transparent;
     color: $link-hover-color;
   }
   &:active {
     color: $link-active-color;
-  }
-  &:visited {
-    color: $link-visited-color;
   }
 }
 
