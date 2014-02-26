@@ -24,11 +24,11 @@
 *    width for the container. i.e. for blog posts (null value doesn't compile)
 */
 
-$container-pad: 10px;
-$container-sm:  ($media-width-xs - ($container-pad*2));
-$container-md:  ($media-width-sm - ($container-pad*2));
-$container-lg:  ($media-width-md - ($container-pad*2));
-$container-xl:  ($media-width-lg - ($container-pad*2));
+$container-pad: $pad-h-xs;
+$container-sm:  ($media-width-xs - ($container-pad*4));
+$container-md:  ($media-width-sm - ($container-pad*4));
+$container-lg:  ($media-width-md - ($container-pad*4));
+$container-xl:  ($media-width-lg - ($container-pad*4));
 
 $container-max: null !default; /* 1 */
 

@@ -30,7 +30,7 @@ $btn-border-option:  false !default;
 $btn-radius-option:  true !default;
 
 @if $btn-inset-option {
-  $btn-shadow:       inset 0 3px 5px rgba(0,0,0,0.3);
+  $btn-shadow: inset 0 3px 5px rgba(0,0,0,0.3);
 }
 @if $btn-border-option {
   $btn-border-width: 1px;
@@ -55,12 +55,17 @@ $btn-radius-option:  true !default;
   position: relative;
 
   &:hover {
-    background-color: tint($btn-bg-default,10%);
-    border: $btn-border-width solid tint($btn-border-default,10%);
+    background-color: tint($btn-bg-default,15%);
+    border: $btn-border-width solid tint($btn-border-default,15%);
+    color: white;
   }
   &:active {
     @include box-shadow($btn-shadow);
     top: 1px;
+    color: white;
+  }
+  &:visited {
+    color: white;
   }
 
   &.disabled,
@@ -79,8 +84,8 @@ $btn-radius-option:  true !default;
   border: $btn-border-width solid $btn-border-primary;
 
   &:hover {
-    background-color: tint($btn-bg-primary,10%);
-    border: $btn-border-width solid tint($btn-border-primary,10%);
+    background-color: tint($btn-bg-primary,15%);
+    border: $btn-border-width solid tint($btn-border-primary,15%);
   }
 }
 .btn-secondary {
@@ -88,7 +93,8 @@ $btn-radius-option:  true !default;
   color: $btn-font-secondary;
 
   &:hover {
-    background-color: tint($btn-bg-secondary,10%);
+    background-color: tint($btn-bg-secondary,15%);
+    border: $btn-border-width solid tint($btn-border-secondary,15%);
   }
 }
 .btn-tertiary {
@@ -96,7 +102,8 @@ $btn-radius-option:  true !default;
   color: $btn-font-tertiary;
 
   &:hover {
-    background-color: tint($btn-bg-tertiary,10%);
+    background-color: tint($btn-bg-tertiary,15%);
+    border: $btn-border-width solid tint($btn-border-tertiary,15%);
   }
 }
 .btn-link {
@@ -105,6 +112,13 @@ $btn-radius-option:  true !default;
 
   &:hover {
     background-color: transparent;
+    color: $link-hover-color;
+  }
+  &:active {
+    color: $link-active-color;
+  }
+  &:visited {
+    color: $link-visited-color;
   }
 }
 

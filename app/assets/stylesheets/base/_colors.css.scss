@@ -29,18 +29,6 @@ $cyan:     #2aa198;
 $green:    #859900;
 
 
-/* Links
-   ========================================================================== */
-
-$link-color: $blue;
-$link-hover-color: ting($blue,10%);
-$link-active-color: $blue;
-$link-visited-color: $blue;
-
-$link-transition-option: true !default;
-
-
-
 /* Brand and component colors
    ========================================================================== */
 
@@ -56,5 +44,18 @@ $neutral2: $gray8;
 $neutral3: $gray7;
 $neutral4: $gray6;
 
-$bg-color-base:           white;
+$bg-color-base:           #f7f7f7;
 $font-color-base:         #42423f;
+
+
+
+/* Links
+   ========================================================================== */
+
+$link-color:         $brand-primary !default;
+$link-hover-color:   tint($link-color,20%) !default;
+$link-active-color:  $link-color !default;
+$link-visited-color: $link-color !default;
+
+$link-no-underline-option: true !default;
+$link-transition-option:   true !default;
