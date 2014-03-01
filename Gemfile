@@ -25,6 +25,7 @@ group :development do
   gem 'style-guide'
   gem "rack-livereload"
   gem "guard-livereload"
+  gem 'simple_form'
 end
 
 # To use ActiveModel has_secure_password

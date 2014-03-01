@@ -1,28 +1,37 @@
-%section.container._m-b-1
-  %a.btn.btn-xs{href:"#"} Fuck face
-  %a.btn.btn-sm{href:"#"} Fuck face
-  %a.btn{href:"#"} Fuck face
-  %a.btn.btn-lg{href:"#"} Fuck face
-  %a.btn.btn-xs.btn-primary{href:"#"} Fuck face
-  %a.btn.btn-sm.btn-primary{href:"#"} Fuck face
-  %a.btn.btn-primary{href:"#"} Fuck face
-  %a.btn.btn-lg.btn-primary{href:"#"} Fuck face
+.container._m-b-1
+  = simple_form_for :user do |f|
+    = f.input :username,    as: :fake
+    = f.input :password,    as: :fake
+    = f.input :description, as: :text
+    = f.input :accepts,     as: :radio_buttons
+    = f.input :accepts,     as: :check_boxes
+    = f.button :submit,     as: :fake
 
 %section.container._m-b-1
-  %a.btn.btn-xs.btn-secondary{href:"#"} Fuck face
-  %a.btn.btn-sm.btn-secondary{href:"#"} Fuck face
-  %a.btn.btn-secondary{href:"#"} Fuck face
-  %a.btn.btn-lg.btn-secondary{href:"#"} Fuck face
-  %a.btn.btn-xs.btn-tertiary{href:"#"} Fuck face
-  %a.btn.btn-sm.btn-tertiary{href:"#"} Fuck face
-  %a.btn.btn-tertiary{href:"#"} Fuck face
-  %a.btn.btn-lg.btn-tertiary{href:"#"} Fuck face
+  %a.btn.btn-xs{href:"#"} Button
+  %a.btn.btn-sm{href:"#"} Button
+  %a.btn{href:"#"} Button
+  %a.btn.btn-lg{href:"#"} Button
+  %a.btn.btn-xs.btn-primary{href:"#"} Button
+  %a.btn.btn-sm.btn-primary{href:"#"} Button
+  %a.btn.btn-primary{href:"#"} Button
+  %a.btn.btn-lg.btn-primary{href:"#"} Button
 
 %section.container._m-b-1
-  %a.btn.btn-xs.btn-link{href:"#"} Fuck face
-  %a.btn.btn-sm.btn-link{href:"#"} Fuck face
-  %a.btn.btn-link{href:"#"} Fuck face
-  %a.btn.btn-lg.btn-link{href:"#"} Fuck face
+  %a.btn.btn-xs.btn-secondary{href:"#"} Button
+  %a.btn.btn-sm.btn-secondary{href:"#"} Button
+  %a.btn.btn-secondary{href:"#"} Button
+  %a.btn.btn-lg.btn-secondary{href:"#"} Button
+  %a.btn.btn-xs.btn-tertiary{href:"#"} Button
+  %a.btn.btn-sm.btn-tertiary{href:"#"} Button
+  %a.btn.btn-tertiary{href:"#"} Button
+  %a.btn.btn-lg.btn-tertiary{href:"#"} Button
+
+%section.container._m-b-1
+  %a.btn.btn-xs.btn-link{href:"#"} Button
+  %a.btn.btn-sm.btn-link{href:"#"} Button
+  %a.btn.btn-link{href:"#"} Button
+  %a.btn.btn-lg.btn-link{href:"#"} Button
 
 %section.container
   %header.grid
